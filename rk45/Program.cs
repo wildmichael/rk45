@@ -32,11 +32,11 @@ namespace rk45
                 timer.Stop();
                 total += timer.ElapsedMilliseconds;
                 timer.Reset();
-                Console.Write('.');
+                Console.Error.Write('.');
             }
 
             // Print out results
-            Console.WriteLine($"\nAverage wall clock time: {total / nRounds} ms");
+            Console.Error.WriteLine($"\nAverage wall clock time: {total / nRounds} ms");
 
             var yNames = Enumerable.Range(0, result[0].Item2.Length)
                 .Select(i => "y" + i.ToString());
